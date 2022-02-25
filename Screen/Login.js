@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Button, Input, Text } from 'react-native-elements';
+import { StyleSheet, View,Text } from 'react-native';
+import { Button, Input, } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles/mainStyle';
 
@@ -17,9 +18,30 @@ export default function Login({navigation}) {
     })
   }
 
+  const Cadastrar = () => {
+
+
+    navigation.navigate("Cadastro")
+  }
+  
+ 
+
   return (
-    <View style={[styles.container, specificStyle.specificContainer]}>
-      <Text h3>Entre no JAMPA TEC</Text>
+
+
+  <View style={[styles.container, specificStyle.specificContainer]}>
+
+
+<Text style={{width:250,height:200, fontSize:30,fontWeight:'bold', padding:30,color:"#ff0043",
+    alignItems: 'flex-end',justifyContent: 'flex-start',}}>
+        JAMPA TEC</Text>
+
+
+
+
+
+
+
       <Input
         placeholder="E-mail"
         leftIcon={{ type: 'font-awesome', name: 'envelope' }}
@@ -34,6 +56,7 @@ export default function Login({navigation}) {
         />
 
       <Button
+
         icon={
           <Icon
             name="check"
@@ -42,8 +65,24 @@ export default function Login({navigation}) {
           />
         }
         title="Entrar"
+        buttonStyle={specificStyle.button}
         onPress={() => entrar()}
       />
+
+<Button
+        icon={
+          <Icon
+            name="user"
+            size={15}
+            color="white"
+          />
+        }
+        title=" Cadastrar"
+        buttonStyle={specificStyle.button}
+        onPress={() => Cadastrar()}
+      />
+
+
 
     </View>
   );
@@ -52,8 +91,14 @@ export default function Login({navigation}) {
 const specificStyle = StyleSheet.create({
   specificContainer: {
     backgroundColor: "#fff"
+
+
+  },
+  button: {
+    width:"100%",
+    marginTop: 10,
+      
+
   }
 }) 
-
-
-
+  
