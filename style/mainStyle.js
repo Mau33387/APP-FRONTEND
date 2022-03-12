@@ -1,6 +1,5 @@
 
 
-import React, { useState } from 'react';
 import { StyleSheet} from 'react-native';
 
 const style = StyleSheet.create({
@@ -8,10 +7,17 @@ const style = StyleSheet.create({
       flex: 2,
       backgroundColor: '#ccc',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
       
      },
+
+     button: {
+      width: "100%",
+      marginTop: 10
+
+    },  
    });
+   export default style
 
 
 

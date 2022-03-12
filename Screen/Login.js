@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View,Text } from 'react-native';
 import { Button, Input, } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import styles from '../styles/mainStyle';
+import styles from '../style/mainStyle';
 
 
 export default function Login({navigation}) {
@@ -13,7 +13,7 @@ export default function Login({navigation}) {
 
   const entrar = () => {
     navigation.reset({
-        index: 2,
+        index: 0,
         routes: [{name: "Principal"}]
     })
   }
@@ -32,57 +32,49 @@ export default function Login({navigation}) {
   <View style={[styles.container, specificStyle.specificContainer]}>
 
 
-<Text style={{width:250,height:200, fontSize:30,fontWeight:'bold', padding:30,color:"#ff0043",
-    alignItems: 'flex-end',justifyContent: 'flex-start',}}>
-        JAMPA TEC</Text>
+<Text h4>JAMPA TEC</Text>
 
 
-
-
-
-
-
-      <Input
-        placeholder="E-mail"
-        leftIcon={{ type: 'font-awesome', name: 'envelope' }}
-        onChangeText={value => setEmail(value)}
-        keyboardType="email-address"
-        />
-      <Input
-        placeholder="Sua senha"
-        leftIcon={{ type: 'font-awesome', name: 'lock' }}
-        onChangeText={value => setPassword(value)}
-        secureTextEntry={true}
-        />
-
-      <Button
-
-        icon={
-          <Icon
-            name="check"
-            size={15}
-            color="white"
+<Input
+            placeholder="E-mail"
+            leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+            onChangeText={value => setEmail(value)}
+            keyboardType="email-address"
+            />
+          <Input
+            placeholder="Sua senha"
+            leftIcon={{ type: 'font-awesome', name: 'lock' }}
+            onChangeText={value => setPassword(value)}
+            secureTextEntry={true}
+            />
+              <Button
+              icon={
+                <Icon
+                  name="check"
+                  size={15}
+                  color="white"
+                />
+   
+              }
+            
+          
+              title="Entrar"
+              buttonStyle={specificStyle.button}
+              onPress={() => entrar()}
+            />
+          
+          <Button
+            icon={
+              <Icon
+                name="user"
+                size={15}
+                color="white"
+              />
+            }
+            title="Cadastrar" 
+            buttonStyle={specificStyle.button}
+            onPress={() => Cadastrar()}
           />
-        }
-        title="Entrar"
-        buttonStyle={specificStyle.button}
-        onPress={() => entrar()}
-      />
-
-<Button
-        icon={
-          <Icon
-            name="user"
-            size={15}
-            color="white"
-          />
-        }
-        title=" Cadastrar"
-        buttonStyle={specificStyle.button}
-        onPress={() => Cadastrar()}
-      />
-
-
 
     </View>
   );
@@ -96,9 +88,10 @@ const specificStyle = StyleSheet.create({
   },
   button: {
     width:"100%",
-    marginTop: 10,
-      
+    marginTop: 5,
+  
+  
 
-  }
+}
 }) 
   

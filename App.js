@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import Principal from './Screen/Principal';
 import Login from './Screen/Login';
 import Cadastro from './Screen/Cadastro';
-import { StyleSheet } from 'react-native';
 
   const Stack = createNativeStackNavigator();
 
@@ -34,19 +33,12 @@ export default function App(){
 );
  }
 
- const style = StyleSheet.create({
-  container: {
-    flex: 2,
-    backgroundColor: '#ccc',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop:100,
     
   
 
- 
+
+    
   
-  }
- });
+  
 
 
