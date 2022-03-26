@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { StyleSheet, View,Text } from 'react-native';
-import { Button, Input, } from 'react-native-elements';
+import { StyleSheet, View, } from 'react-native';
+import { Button, Input, Text, } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../style/mainStyle';
 
@@ -32,8 +32,7 @@ export default function Login({navigation}) {
   <View style={[styles.container, specificStyle.specificContainer]}>
 
 
-<Text h4>JAMPA TEC</Text>
-
+<Text h3>JAMPA TEC</Text>
 
 <Input
             placeholder="E-mail"
@@ -47,22 +46,21 @@ export default function Login({navigation}) {
             onChangeText={value => setPassword(value)}
             secureTextEntry={true}
             />
-              <Button
+                        <Button
               icon={
                 <Icon
+                
                   name="check"
                   size={15}
                   color="white"
                 />
-   
               }
-            
-          
               title="Entrar"
               buttonStyle={specificStyle.button}
               onPress={() => entrar()}
             />
           
+
           <Button
             icon={
               <Icon
@@ -71,27 +69,50 @@ export default function Login({navigation}) {
                 color="white"
               />
             }
-            title="Cadastrar" 
+            title=" Cadastrar"
             buttonStyle={specificStyle.button}
             onPress={() => Cadastrar()}
           />
-
+              
+              
     </View>
   );
 }
 
 const specificStyle = StyleSheet.create({
   specificContainer: {
-    backgroundColor: "#fff"
-
+    backgroundColor: "#fff",
+    padding: 19,
+    alignItems: 'center',
+      justifyContent: 'center'
+      
 
   },
-  button: {
-    width:"100%",
-    marginTop: 5,
-  
+  title
+  : {
+    width:"90%",
+    paddingTop: 10,
+    paddingVertical: 12,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black'
+},
+
+button: {
+
+  backgroundColor:"#00FFFF",
+  width:350,
+  height:40,
+  padding:19,
+  paddingTop: 5,
+  paddingVertical: 12,
+  borderRadius: 4,
+  elevation: 3,
+  justifyContent:'center',
+  flexDirection:"row"
   
 
-}
+},
+
 }) 
   
